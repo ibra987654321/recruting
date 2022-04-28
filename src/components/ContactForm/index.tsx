@@ -10,7 +10,7 @@ import Input from "../../common/Input";
 import { ContactContainer, FormGroup, Span, ButtonContainer } from "./styles";
 
 const Contact = ({ title, content, id, t }: ContactProps) => {
-  const { values, errors, handleChange, handleSubmit } = useForm(
+  const { values, errors, handleChange } = useForm(
     validate
   ) as any;
 
@@ -22,9 +22,9 @@ const Contact = ({ title, content, id, t }: ContactProps) => {
       </Zoom>
     );
   };
-  const onSubmit = (data: any) => {
-    console.log(data)
-  }
+  // const onSubmit = (data: any) => {
+  //   console.log(data)
+  // }
 
   // @ts-ignore
   return (
@@ -46,7 +46,6 @@ const Contact = ({ title, content, id, t }: ContactProps) => {
                   value={values.name || ""}
                   onChange={handleChange}
                 />
-                {/*<ValidationType type="name" />*/}
               </Col>
               <Col span={24}>
                 <Input
@@ -66,7 +65,6 @@ const Contact = ({ title, content, id, t }: ContactProps) => {
                     value={values.email || ""}
                     onChange={handleChange}
                 />
-                {/*<ValidationType type="email" />*/}
               </Col>
               <Col span={24}>
                 <Input
